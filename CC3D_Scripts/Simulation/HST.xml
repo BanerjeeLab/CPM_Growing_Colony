@@ -1,0 +1,1025 @@
+    <CompuCell3D Revision="20170130" Version="3.7.5">
+   
+<Metadata>
+   
+   <!-- Basic properties simulation -->
+   <NumberOfProcessors>1</NumberOfProcessors>
+   <DebugOutputFrequency>100</DebugOutputFrequency>
+   <!-- <NonParallelModule Name="Potts"/>                -->
+</Metadata>
+   <Potts>
+      
+      <!-- Basic properties of CPM (GGH) algorithm -->
+      <Dimensions x="1500" y="1500" z="1"/>
+      <Steps>25000</Steps>
+      <Temperature>            10.0</Temperature>
+      <NeighborOrder>1</NeighborOrder>
+      <LatticeType>Square</LatticeType>
+   </Potts>
+   
+   <Plugin Name="CellType">
+      
+      <!-- Listing all cell types in the simulation -->
+      <CellType TypeId="0"  TypeName="Medium"/>
+      <CellType TypeId="1"  TypeName="1"/>
+      <CellType TypeId="2"  TypeName="2"/>
+      <CellType TypeId="3"  TypeName="3"/>
+      <CellType TypeId="4"  TypeName="4"/>
+      <CellType TypeId="5"  TypeName="5"/>
+      <CellType TypeId="6"  TypeName="6"/>
+      <CellType TypeId="7"  TypeName="7"/>
+      <CellType TypeId="8"  TypeName="8"/>
+      <CellType TypeId="9"  TypeName="9"/>
+      <CellType TypeId="10" TypeName="10"/>
+	  
+      <CellType TypeId="11"  TypeName="11"/>
+      <CellType TypeId="12"  TypeName="12"/>
+      <CellType TypeId="13"  TypeName="13"/>
+      <CellType TypeId="14"  TypeName="14"/>
+      <CellType TypeId="15"  TypeName="15"/>
+      <CellType TypeId="16"  TypeName="16"/>
+      <CellType TypeId="17"  TypeName="17"/>
+      <CellType TypeId="18"  TypeName="18"/>
+      <CellType TypeId="19"  TypeName="19"/>	  
+      <CellType TypeId="20"  TypeName="20"/>
+      <CellType TypeId="21"  TypeName="21"/>
+      <CellType TypeId="22"  TypeName="22"/>
+      <CellType TypeId="23"  TypeName="23"/>
+      <CellType TypeId="24"  TypeName="24"/>
+      <CellType TypeId="25"  TypeName="25"/>
+      <CellType TypeId="26"  TypeName="26"/>
+      <CellType TypeId="27"  TypeName="27"/>
+      <CellType TypeId="28"  TypeName="28"/>
+      <CellType TypeId="29"  TypeName="29"/>
+      <CellType TypeId="30"  TypeName="30"/>
+      <CellType TypeId="31"  TypeName="31"/>
+      <CellType TypeId="32"  TypeName="32"/>	
+	  <CellType TypeId="33"  TypeName="33"/>
+	  <CellType TypeId="34"  TypeName="34"/>
+	  <CellType TypeId="35"  TypeName="35"/>
+	  <CellType TypeId="36"  TypeName="36"/>
+	  <CellType TypeId="37"  TypeName="37"/>
+	  <CellType TypeId="38"  TypeName="38"/>
+	  <CellType TypeId="39"  TypeName="39"/>
+	  <CellType TypeId="40"  TypeName="40"/>
+   </Plugin>
+   
+   <Plugin Name="Volume"/>     
+   
+     
+   <Plugin Name="CenterOfMass"> </Plugin> 
+   
+   <Plugin Name="NeighborTracker"> </Plugin>
+   
+    <Plugin Name="MomentOfInertia"> </Plugin>   
+   
+   <Plugin Name="PixelTracker"> </Plugin>
+   
+   <Plugin Name="BoundaryPixelTracker"> </Plugin>
+   
+   <Plugin Name="Contact">     
+      <!-- ####################################
+	       #Specification of adhesion energies# 
+           #################################### -->
+	  <Energy Type1="Medium" Type2="Medium">10.0</Energy>
+	  
+      <Energy Type1="Medium" Type2="1">10.0</Energy>
+	  <Energy Type1="Medium" Type2="3">10.0</Energy>
+      <Energy Type1="Medium" Type2="5">10.0</Energy>
+      <Energy Type1="Medium" Type2="7">10.0</Energy>
+      <Energy Type1="Medium" Type2="9">10.0</Energy>
+      
+	  <Energy Type1="Medium" Type2="2">10.0</Energy>      
+      <Energy Type1="Medium" Type2="4">10.0</Energy>
+      <Energy Type1="Medium" Type2="6">10.0</Energy>
+      <Energy Type1="Medium" Type2="8">10.0</Energy>
+      <Energy Type1="Medium" Type2="10">10.0</Energy>
+	  
+	  <!-- ###########################
+	       #HOMOTYPIC BINDING ENERGIE#
+	       ########################### -->		   
+	  <!--         WILD TYPE           -->	   
+	  <Energy Type1="1" Type2="1">  6.0 </Energy>
+      <Energy Type1="1" Type2="3">  6.0 </Energy>
+      <Energy Type1="1" Type2="5">  6.0 </Energy>
+	  <Energy Type1="1" Type2="7">  6.0 </Energy>
+      <Energy Type1="1" Type2="9">  6.0 </Energy>
+	  
+	  <Energy Type1="3" Type2="3">  6.0 </Energy>
+      <Energy Type1="3" Type2="5">  6.0 </Energy>
+      <Energy Type1="3" Type2="7">  6.0 </Energy>
+      <Energy Type1="3" Type2="9">  6.0 </Energy>
+	  
+	  <Energy Type1="5" Type2="5">  6.0 </Energy>
+      <Energy Type1="5" Type2="7">  6.0 </Energy>
+      <Energy Type1="5" Type2="9">  6.0 </Energy>
+	  
+	  <Energy Type1="7" Type2="7">  6.0 </Energy>
+      <Energy Type1="7" Type2="9">  6.0 </Energy>
+	  
+	  <Energy Type1="9" Type2="9">  6.0 </Energy>
+	  
+	  <!--           MUTANT                -->	  
+      <Energy Type1="2" Type2="2">  6.0 </Energy>  
+      <Energy Type1="2" Type2="4">  6.0 </Energy>
+      <Energy Type1="2" Type2="6">  6.0 </Energy>
+      <Energy Type1="2" Type2="8">  6.0 </Energy>
+      <Energy Type1="2" Type2="10">  6.0 </Energy>   
+	  
+      <Energy Type1="4" Type2="4">  6.0 </Energy>
+      <Energy Type1="4" Type2="6">  6.0 </Energy>
+      <Energy Type1="4" Type2="8">  6.0 </Energy>
+      <Energy Type1="4" Type2="10">  6.0 </Energy>     	  
+      
+	  <Energy Type1="6" Type2="6">  6.0 </Energy>
+      <Energy Type1="6" Type2="8">  6.0 </Energy>
+      <Energy Type1="6" Type2="10">  6.0 </Energy>	  
+      
+	  <Energy Type1="8" Type2="8">  6.0 </Energy>
+      <Energy Type1="8" Type2="10">  6.0 </Energy>     	 
+	  
+      <Energy Type1="10" Type2="10">  6.0 </Energy>
+	  
+	  <!-- #############################
+	       #HETEROTYPIC BINDING ENERGIE#
+	       ############################# -->
+	  <Energy Type1="1" Type2="2">  6.0 </Energy>
+      <Energy Type1="1" Type2="4">  6.0 </Energy>
+      <Energy Type1="1" Type2="6">  6.0 </Energy>
+      <Energy Type1="1" Type2="8">  6.0 </Energy>
+      <Energy Type1="1" Type2="10">  6.0 </Energy>
+	  
+	  <Energy Type1="2" Type2="3">  6.0 </Energy>
+	  <Energy Type1="2" Type2="5">  6.0 </Energy>
+      <Energy Type1="2" Type2="7">  6.0 </Energy>
+      <Energy Type1="2" Type2="9">  6.0 </Energy>
+      
+	  <Energy Type1="3" Type2="4">  6.0 </Energy>
+      <Energy Type1="3" Type2="6">  6.0 </Energy>
+      <Energy Type1="3" Type2="8">  6.0 </Energy>
+      <Energy Type1="3" Type2="10">  6.0 </Energy>
+      
+	  <Energy Type1="4" Type2="5">  6.0 </Energy>
+      <Energy Type1="4" Type2="7">  6.0 </Energy>
+      <Energy Type1="4" Type2="9">  6.0 </Energy>
+      
+	  <Energy Type1="5" Type2="6">  6.0 </Energy>
+      <Energy Type1="5" Type2="8">  6.0 </Energy>
+      <Energy Type1="5" Type2="10">  6.0 </Energy>
+      
+	  <Energy Type1="6" Type2="7">  6.0 </Energy>
+      <Energy Type1="6" Type2="9">  6.0 </Energy>
+      
+	  <Energy Type1="7" Type2="8">  6.0 </Energy>
+      <Energy Type1="7" Type2="10">  6.0 </Energy>
+      
+	  <Energy Type1="8" Type2="9">  6.0 </Energy>
+      
+	  <Energy Type1="9" Type2="10">  6.0 </Energy>
+	  
+	  <!-- ############################
+	       # TYPES FOR COLORING CELLS #
+	       ############################ --> 
+	  <Energy Type1="Medium" Type2="11">10.0</Energy>
+      <Energy Type1="Medium" Type2="12">10.0</Energy>
+      <Energy Type1="Medium" Type2="13">10.0</Energy>
+      <Energy Type1="Medium" Type2="14">10.0</Energy>
+      <Energy Type1="Medium" Type2="15">10.0</Energy>
+      <Energy Type1="Medium" Type2="16">10.0</Energy>
+      <Energy Type1="Medium" Type2="17">10.0</Energy>
+      <Energy Type1="Medium" Type2="18">10.0</Energy>
+      <Energy Type1="Medium" Type2="19">10.0</Energy>
+      <Energy Type1="Medium" Type2="20">10.0</Energy>
+      <Energy Type1="Medium" Type2="21">10.0</Energy>
+      <Energy Type1="Medium" Type2="22">10.0</Energy>
+      <Energy Type1="Medium" Type2="23">10.0</Energy>
+      <Energy Type1="Medium" Type2="24">10.0</Energy>
+      <Energy Type1="Medium" Type2="25">10.0</Energy>
+      <Energy Type1="Medium" Type2="26">10.0</Energy>
+      <Energy Type1="Medium" Type2="27">10.0</Energy>
+      <Energy Type1="Medium" Type2="28">10.0</Energy>
+      <Energy Type1="Medium" Type2="29">10.0</Energy>
+      <Energy Type1="Medium" Type2="30">10.0</Energy>
+      <Energy Type1="Medium" Type2="31">10.0</Energy>
+      <Energy Type1="Medium" Type2="32">10.0</Energy>
+      <Energy Type1="Medium" Type2="33">10.0</Energy>
+      <Energy Type1="Medium" Type2="34">10.0</Energy>
+      <Energy Type1="Medium" Type2="35">10.0</Energy>
+      <Energy Type1="Medium" Type2="36">10.0</Energy>
+      <Energy Type1="Medium" Type2="37">10.0</Energy>
+      <Energy Type1="Medium" Type2="38">10.0</Energy>
+      <Energy Type1="Medium" Type2="39">10.0</Energy>
+      <Energy Type1="Medium" Type2="40">10.0</Energy>
+
+	  
+        <Energy Type1="1" Type2="11">6.0</Energy>
+        <Energy Type1="1" Type2="12">6.0</Energy>
+        <Energy Type1="1" Type2="13">6.0</Energy>
+        <Energy Type1="1" Type2="14">6.0</Energy>
+        <Energy Type1="1" Type2="15">6.0</Energy>
+        <Energy Type1="1" Type2="16">6.0</Energy>
+        <Energy Type1="1" Type2="17">6.0</Energy>
+        <Energy Type1="1" Type2="18">6.0</Energy>
+        <Energy Type1="1" Type2="19">6.0</Energy>
+        <Energy Type1="1" Type2="20">6.0</Energy>
+        <Energy Type1="1" Type2="21">6.0</Energy>
+        <Energy Type1="1" Type2="22">6.0</Energy>
+        <Energy Type1="1" Type2="23">6.0</Energy>
+        <Energy Type1="1" Type2="24">6.0</Energy>
+        <Energy Type1="1" Type2="25">6.0</Energy>
+        <Energy Type1="1" Type2="26">6.0</Energy>
+        <Energy Type1="1" Type2="27">6.0</Energy>
+        <Energy Type1="1" Type2="28">6.0</Energy>
+        <Energy Type1="1" Type2="29">6.0</Energy>
+        <Energy Type1="1" Type2="30">6.0</Energy>
+        <Energy Type1="1" Type2="31">6.0</Energy>
+        <Energy Type1="1" Type2="32">6.0</Energy>
+        <Energy Type1="1" Type2="33">6.0</Energy>
+        <Energy Type1="1" Type2="34">6.0</Energy>
+        <Energy Type1="1" Type2="35">6.0</Energy>
+        <Energy Type1="1" Type2="36">6.0</Energy>
+        <Energy Type1="1" Type2="37">6.0</Energy>
+        <Energy Type1="1" Type2="38">6.0</Energy>
+        <Energy Type1="1" Type2="39">6.0</Energy>
+        <Energy Type1="1" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="2" Type2="11">6.0</Energy>
+        <Energy Type1="2" Type2="12">6.0</Energy>
+        <Energy Type1="2" Type2="13">6.0</Energy>
+        <Energy Type1="2" Type2="14">6.0</Energy>
+        <Energy Type1="2" Type2="15">6.0</Energy>
+        <Energy Type1="2" Type2="16">6.0</Energy>
+        <Energy Type1="2" Type2="17">6.0</Energy>
+        <Energy Type1="2" Type2="18">6.0</Energy>
+        <Energy Type1="2" Type2="19">6.0</Energy>
+        <Energy Type1="2" Type2="20">6.0</Energy>
+        <Energy Type1="2" Type2="21">6.0</Energy>
+        <Energy Type1="2" Type2="22">6.0</Energy>
+        <Energy Type1="2" Type2="23">6.0</Energy>
+        <Energy Type1="2" Type2="24">6.0</Energy>
+        <Energy Type1="2" Type2="25">6.0</Energy>
+        <Energy Type1="2" Type2="26">6.0</Energy>
+        <Energy Type1="2" Type2="27">6.0</Energy>
+        <Energy Type1="2" Type2="28">6.0</Energy>
+        <Energy Type1="2" Type2="29">6.0</Energy>
+        <Energy Type1="2" Type2="30">6.0</Energy>
+        <Energy Type1="2" Type2="31">6.0</Energy>
+        <Energy Type1="2" Type2="32">6.0</Energy>
+        <Energy Type1="2" Type2="33">6.0</Energy>
+        <Energy Type1="2" Type2="34">6.0</Energy>
+        <Energy Type1="2" Type2="35">6.0</Energy>
+        <Energy Type1="2" Type2="36">6.0</Energy>
+        <Energy Type1="2" Type2="37">6.0</Energy>
+        <Energy Type1="2" Type2="38">6.0</Energy>
+        <Energy Type1="2" Type2="39">6.0</Energy>
+        <Energy Type1="2" Type2="40">6.0</Energy>
+ 
+ 
+        <Energy Type1="3" Type2="11">6.0</Energy>
+        <Energy Type1="3" Type2="12">6.0</Energy>
+        <Energy Type1="3" Type2="13">6.0</Energy>
+        <Energy Type1="3" Type2="14">6.0</Energy>
+        <Energy Type1="3" Type2="15">6.0</Energy>
+        <Energy Type1="3" Type2="16">6.0</Energy>
+        <Energy Type1="3" Type2="17">6.0</Energy>
+        <Energy Type1="3" Type2="18">6.0</Energy>
+        <Energy Type1="3" Type2="19">6.0</Energy>
+        <Energy Type1="3" Type2="20">6.0</Energy>
+        <Energy Type1="3" Type2="21">6.0</Energy>
+        <Energy Type1="3" Type2="22">6.0</Energy>
+        <Energy Type1="3" Type2="23">6.0</Energy>
+        <Energy Type1="3" Type2="24">6.0</Energy>
+        <Energy Type1="3" Type2="25">6.0</Energy>
+        <Energy Type1="3" Type2="26">6.0</Energy>
+        <Energy Type1="3" Type2="27">6.0</Energy>
+        <Energy Type1="3" Type2="28">6.0</Energy>
+        <Energy Type1="3" Type2="29">6.0</Energy>
+        <Energy Type1="3" Type2="30">6.0</Energy>
+        <Energy Type1="3" Type2="31">6.0</Energy>
+        <Energy Type1="3" Type2="32">6.0</Energy>
+        <Energy Type1="3" Type2="33">6.0</Energy>
+        <Energy Type1="3" Type2="34">6.0</Energy>
+        <Energy Type1="3" Type2="35">6.0</Energy>
+        <Energy Type1="3" Type2="36">6.0</Energy>
+        <Energy Type1="3" Type2="37">6.0</Energy>
+        <Energy Type1="3" Type2="38">6.0</Energy>
+        <Energy Type1="3" Type2="39">6.0</Energy>
+        <Energy Type1="3" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="4" Type2="11">6.0</Energy>
+        <Energy Type1="4" Type2="12">6.0</Energy>
+        <Energy Type1="4" Type2="13">6.0</Energy>
+        <Energy Type1="4" Type2="14">6.0</Energy>
+        <Energy Type1="4" Type2="15">6.0</Energy>
+        <Energy Type1="4" Type2="16">6.0</Energy>
+        <Energy Type1="4" Type2="17">6.0</Energy>
+        <Energy Type1="4" Type2="18">6.0</Energy>
+        <Energy Type1="4" Type2="19">6.0</Energy>
+        <Energy Type1="4" Type2="20">6.0</Energy>
+        <Energy Type1="4" Type2="21">6.0</Energy>
+        <Energy Type1="4" Type2="22">6.0</Energy>
+        <Energy Type1="4" Type2="23">6.0</Energy>
+        <Energy Type1="4" Type2="24">6.0</Energy>
+        <Energy Type1="4" Type2="25">6.0</Energy>
+        <Energy Type1="4" Type2="26">6.0</Energy>
+        <Energy Type1="4" Type2="27">6.0</Energy>
+        <Energy Type1="4" Type2="28">6.0</Energy>
+        <Energy Type1="4" Type2="29">6.0</Energy>
+        <Energy Type1="4" Type2="30">6.0</Energy>
+        <Energy Type1="4" Type2="31">6.0</Energy>
+        <Energy Type1="4" Type2="32">6.0</Energy>
+        <Energy Type1="4" Type2="33">6.0</Energy>
+        <Energy Type1="4" Type2="34">6.0</Energy>
+        <Energy Type1="4" Type2="35">6.0</Energy>
+        <Energy Type1="4" Type2="36">6.0</Energy>
+        <Energy Type1="4" Type2="37">6.0</Energy>
+        <Energy Type1="4" Type2="38">6.0</Energy>
+        <Energy Type1="4" Type2="39">6.0</Energy>
+        <Energy Type1="4" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="5" Type2="11">6.0</Energy>
+        <Energy Type1="5" Type2="12">6.0</Energy>
+        <Energy Type1="5" Type2="13">6.0</Energy>
+        <Energy Type1="5" Type2="14">6.0</Energy>
+        <Energy Type1="5" Type2="15">6.0</Energy>
+        <Energy Type1="5" Type2="16">6.0</Energy>
+        <Energy Type1="5" Type2="17">6.0</Energy>
+        <Energy Type1="5" Type2="18">6.0</Energy>
+        <Energy Type1="5" Type2="19">6.0</Energy>
+        <Energy Type1="5" Type2="20">6.0</Energy>
+        <Energy Type1="5" Type2="21">6.0</Energy>
+        <Energy Type1="5" Type2="22">6.0</Energy>
+        <Energy Type1="5" Type2="23">6.0</Energy>
+        <Energy Type1="5" Type2="24">6.0</Energy>
+        <Energy Type1="5" Type2="25">6.0</Energy>
+        <Energy Type1="5" Type2="26">6.0</Energy>
+        <Energy Type1="5" Type2="27">6.0</Energy>
+        <Energy Type1="5" Type2="28">6.0</Energy>
+        <Energy Type1="5" Type2="29">6.0</Energy>
+        <Energy Type1="5" Type2="30">6.0</Energy>
+        <Energy Type1="5" Type2="31">6.0</Energy>
+        <Energy Type1="5" Type2="32">6.0</Energy>
+        <Energy Type1="5" Type2="33">6.0</Energy>
+        <Energy Type1="5" Type2="34">6.0</Energy>
+        <Energy Type1="5" Type2="35">6.0</Energy>
+        <Energy Type1="5" Type2="36">6.0</Energy>
+        <Energy Type1="5" Type2="37">6.0</Energy>
+        <Energy Type1="5" Type2="38">6.0</Energy>
+        <Energy Type1="5" Type2="39">6.0</Energy>
+        <Energy Type1="5" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="6" Type2="11">6.0</Energy>
+        <Energy Type1="6" Type2="12">6.0</Energy>
+        <Energy Type1="6" Type2="13">6.0</Energy>
+        <Energy Type1="6" Type2="14">6.0</Energy>
+        <Energy Type1="6" Type2="15">6.0</Energy>
+        <Energy Type1="6" Type2="16">6.0</Energy>
+        <Energy Type1="6" Type2="17">6.0</Energy>
+        <Energy Type1="6" Type2="18">6.0</Energy>
+        <Energy Type1="6" Type2="19">6.0</Energy>
+        <Energy Type1="6" Type2="20">6.0</Energy>
+        <Energy Type1="6" Type2="21">6.0</Energy>
+        <Energy Type1="6" Type2="22">6.0</Energy>
+        <Energy Type1="6" Type2="23">6.0</Energy>
+        <Energy Type1="6" Type2="24">6.0</Energy>
+        <Energy Type1="6" Type2="25">6.0</Energy>
+        <Energy Type1="6" Type2="26">6.0</Energy>
+        <Energy Type1="6" Type2="27">6.0</Energy>
+        <Energy Type1="6" Type2="28">6.0</Energy>
+        <Energy Type1="6" Type2="29">6.0</Energy>
+        <Energy Type1="6" Type2="30">6.0</Energy>
+        <Energy Type1="6" Type2="31">6.0</Energy>
+        <Energy Type1="6" Type2="32">6.0</Energy>
+        <Energy Type1="6" Type2="33">6.0</Energy>
+        <Energy Type1="6" Type2="34">6.0</Energy>
+        <Energy Type1="6" Type2="35">6.0</Energy>
+        <Energy Type1="6" Type2="36">6.0</Energy>
+        <Energy Type1="6" Type2="37">6.0</Energy>
+        <Energy Type1="6" Type2="38">6.0</Energy>
+        <Energy Type1="6" Type2="39">6.0</Energy>
+        <Energy Type1="6" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="7" Type2="11">6.0</Energy>
+        <Energy Type1="7" Type2="12">6.0</Energy>
+        <Energy Type1="7" Type2="13">6.0</Energy>
+        <Energy Type1="7" Type2="14">6.0</Energy>
+        <Energy Type1="7" Type2="15">6.0</Energy>
+        <Energy Type1="7" Type2="16">6.0</Energy>
+        <Energy Type1="7" Type2="17">6.0</Energy>
+        <Energy Type1="7" Type2="18">6.0</Energy>
+        <Energy Type1="7" Type2="19">6.0</Energy>
+        <Energy Type1="7" Type2="20">6.0</Energy>
+        <Energy Type1="7" Type2="21">6.0</Energy>
+        <Energy Type1="7" Type2="22">6.0</Energy>
+        <Energy Type1="7" Type2="23">6.0</Energy>
+        <Energy Type1="7" Type2="24">6.0</Energy>
+        <Energy Type1="7" Type2="25">6.0</Energy>
+        <Energy Type1="7" Type2="26">6.0</Energy>
+        <Energy Type1="7" Type2="27">6.0</Energy>
+        <Energy Type1="7" Type2="28">6.0</Energy>
+        <Energy Type1="7" Type2="29">6.0</Energy>
+        <Energy Type1="7" Type2="30">6.0</Energy>
+        <Energy Type1="7" Type2="31">6.0</Energy>
+        <Energy Type1="7" Type2="32">6.0</Energy>
+        <Energy Type1="7" Type2="33">6.0</Energy>
+        <Energy Type1="7" Type2="34">6.0</Energy>
+        <Energy Type1="7" Type2="35">6.0</Energy>
+        <Energy Type1="7" Type2="36">6.0</Energy>
+        <Energy Type1="7" Type2="37">6.0</Energy>
+        <Energy Type1="7" Type2="38">6.0</Energy>
+        <Energy Type1="7" Type2="39">6.0</Energy>
+        <Energy Type1="7" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="8" Type2="11">6.0</Energy>
+        <Energy Type1="8" Type2="12">6.0</Energy>
+        <Energy Type1="8" Type2="13">6.0</Energy>
+        <Energy Type1="8" Type2="14">6.0</Energy>
+        <Energy Type1="8" Type2="15">6.0</Energy>
+        <Energy Type1="8" Type2="16">6.0</Energy>
+        <Energy Type1="8" Type2="17">6.0</Energy>
+        <Energy Type1="8" Type2="18">6.0</Energy>
+        <Energy Type1="8" Type2="19">6.0</Energy>
+        <Energy Type1="8" Type2="20">6.0</Energy>
+        <Energy Type1="8" Type2="21">6.0</Energy>
+        <Energy Type1="8" Type2="22">6.0</Energy>
+        <Energy Type1="8" Type2="23">6.0</Energy>
+        <Energy Type1="8" Type2="24">6.0</Energy>
+        <Energy Type1="8" Type2="25">6.0</Energy>
+        <Energy Type1="8" Type2="26">6.0</Energy>
+        <Energy Type1="8" Type2="27">6.0</Energy>
+        <Energy Type1="8" Type2="28">6.0</Energy>
+        <Energy Type1="8" Type2="29">6.0</Energy>
+        <Energy Type1="8" Type2="30">6.0</Energy>
+        <Energy Type1="8" Type2="31">6.0</Energy>
+        <Energy Type1="8" Type2="32">6.0</Energy>
+        <Energy Type1="8" Type2="33">6.0</Energy>
+        <Energy Type1="8" Type2="34">6.0</Energy>
+        <Energy Type1="8" Type2="35">6.0</Energy>
+        <Energy Type1="8" Type2="36">6.0</Energy>
+        <Energy Type1="8" Type2="37">6.0</Energy>
+        <Energy Type1="8" Type2="38">6.0</Energy>
+        <Energy Type1="8" Type2="39">6.0</Energy>
+        <Energy Type1="8" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="9" Type2="11">6.0</Energy>
+        <Energy Type1="9" Type2="12">6.0</Energy>
+        <Energy Type1="9" Type2="13">6.0</Energy>
+        <Energy Type1="9" Type2="14">6.0</Energy>
+        <Energy Type1="9" Type2="15">6.0</Energy>
+        <Energy Type1="9" Type2="16">6.0</Energy>
+        <Energy Type1="9" Type2="17">6.0</Energy>
+        <Energy Type1="9" Type2="18">6.0</Energy>
+        <Energy Type1="9" Type2="19">6.0</Energy>
+        <Energy Type1="9" Type2="20">6.0</Energy>
+        <Energy Type1="9" Type2="21">6.0</Energy>
+        <Energy Type1="9" Type2="22">6.0</Energy>
+        <Energy Type1="9" Type2="23">6.0</Energy>
+        <Energy Type1="9" Type2="24">6.0</Energy>
+        <Energy Type1="9" Type2="25">6.0</Energy>
+        <Energy Type1="9" Type2="26">6.0</Energy>
+        <Energy Type1="9" Type2="27">6.0</Energy>
+        <Energy Type1="9" Type2="28">6.0</Energy>
+        <Energy Type1="9" Type2="29">6.0</Energy>
+        <Energy Type1="9" Type2="30">6.0</Energy>
+        <Energy Type1="9" Type2="31">6.0</Energy>
+        <Energy Type1="9" Type2="32">6.0</Energy>
+        <Energy Type1="9" Type2="33">6.0</Energy>
+        <Energy Type1="9" Type2="34">6.0</Energy>
+        <Energy Type1="9" Type2="35">6.0</Energy>
+        <Energy Type1="9" Type2="36">6.0</Energy>
+        <Energy Type1="9" Type2="37">6.0</Energy>
+        <Energy Type1="9" Type2="38">6.0</Energy>
+        <Energy Type1="9" Type2="39">6.0</Energy>
+        <Energy Type1="9" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="10" Type2="11">6.0</Energy>
+        <Energy Type1="10" Type2="12">6.0</Energy>
+        <Energy Type1="10" Type2="13">6.0</Energy>
+        <Energy Type1="10" Type2="14">6.0</Energy>
+        <Energy Type1="10" Type2="15">6.0</Energy>
+        <Energy Type1="10" Type2="16">6.0</Energy>
+        <Energy Type1="10" Type2="17">6.0</Energy>
+        <Energy Type1="10" Type2="18">6.0</Energy>
+        <Energy Type1="10" Type2="19">6.0</Energy>
+        <Energy Type1="10" Type2="20">6.0</Energy>
+        <Energy Type1="10" Type2="21">6.0</Energy>
+        <Energy Type1="10" Type2="22">6.0</Energy>
+        <Energy Type1="10" Type2="23">6.0</Energy>
+        <Energy Type1="10" Type2="24">6.0</Energy>
+        <Energy Type1="10" Type2="25">6.0</Energy>
+        <Energy Type1="10" Type2="26">6.0</Energy>
+        <Energy Type1="10" Type2="27">6.0</Energy>
+        <Energy Type1="10" Type2="28">6.0</Energy>
+        <Energy Type1="10" Type2="29">6.0</Energy>
+        <Energy Type1="10" Type2="30">6.0</Energy>
+        <Energy Type1="10" Type2="31">6.0</Energy>
+        <Energy Type1="10" Type2="32">6.0</Energy>
+        <Energy Type1="10" Type2="33">6.0</Energy>
+        <Energy Type1="10" Type2="34">6.0</Energy>
+        <Energy Type1="10" Type2="35">6.0</Energy>
+        <Energy Type1="10" Type2="36">6.0</Energy>
+        <Energy Type1="10" Type2="37">6.0</Energy>
+        <Energy Type1="10" Type2="38">6.0</Energy>
+        <Energy Type1="10" Type2="39">6.0</Energy>
+        <Energy Type1="10" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="11" Type2="11">6.0</Energy>
+        <Energy Type1="11" Type2="12">6.0</Energy>
+        <Energy Type1="11" Type2="13">6.0</Energy>
+        <Energy Type1="11" Type2="14">6.0</Energy>
+        <Energy Type1="11" Type2="15">6.0</Energy>
+        <Energy Type1="11" Type2="16">6.0</Energy>
+        <Energy Type1="11" Type2="17">6.0</Energy>
+        <Energy Type1="11" Type2="18">6.0</Energy>
+        <Energy Type1="11" Type2="19">6.0</Energy>
+        <Energy Type1="11" Type2="20">6.0</Energy>
+        <Energy Type1="11" Type2="21">6.0</Energy>
+        <Energy Type1="11" Type2="22">6.0</Energy>
+        <Energy Type1="11" Type2="23">6.0</Energy>
+        <Energy Type1="11" Type2="24">6.0</Energy>
+        <Energy Type1="11" Type2="25">6.0</Energy>
+        <Energy Type1="11" Type2="26">6.0</Energy>
+        <Energy Type1="11" Type2="27">6.0</Energy>
+        <Energy Type1="11" Type2="28">6.0</Energy>
+        <Energy Type1="11" Type2="29">6.0</Energy>
+        <Energy Type1="11" Type2="30">6.0</Energy>
+        <Energy Type1="11" Type2="31">6.0</Energy>
+        <Energy Type1="11" Type2="32">6.0</Energy>
+        <Energy Type1="11" Type2="33">6.0</Energy>
+        <Energy Type1="11" Type2="34">6.0</Energy>
+        <Energy Type1="11" Type2="35">6.0</Energy>
+        <Energy Type1="11" Type2="36">6.0</Energy>
+        <Energy Type1="11" Type2="37">6.0</Energy>
+        <Energy Type1="11" Type2="38">6.0</Energy>
+        <Energy Type1="11" Type2="39">6.0</Energy>
+        <Energy Type1="11" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="12" Type2="12">6.0</Energy>
+        <Energy Type1="12" Type2="13">6.0</Energy>
+        <Energy Type1="12" Type2="14">6.0</Energy>
+        <Energy Type1="12" Type2="15">6.0</Energy>
+        <Energy Type1="12" Type2="16">6.0</Energy>
+        <Energy Type1="12" Type2="17">6.0</Energy>
+        <Energy Type1="12" Type2="18">6.0</Energy>
+        <Energy Type1="12" Type2="19">6.0</Energy>
+        <Energy Type1="12" Type2="20">6.0</Energy>
+        <Energy Type1="12" Type2="21">6.0</Energy>
+        <Energy Type1="12" Type2="22">6.0</Energy>
+        <Energy Type1="12" Type2="23">6.0</Energy>
+        <Energy Type1="12" Type2="24">6.0</Energy>
+        <Energy Type1="12" Type2="25">6.0</Energy>
+        <Energy Type1="12" Type2="26">6.0</Energy>
+        <Energy Type1="12" Type2="27">6.0</Energy>
+        <Energy Type1="12" Type2="28">6.0</Energy>
+        <Energy Type1="12" Type2="29">6.0</Energy>
+        <Energy Type1="12" Type2="30">6.0</Energy>
+        <Energy Type1="12" Type2="31">6.0</Energy>
+        <Energy Type1="12" Type2="32">6.0</Energy>
+        <Energy Type1="12" Type2="33">6.0</Energy>
+        <Energy Type1="12" Type2="34">6.0</Energy>
+        <Energy Type1="12" Type2="35">6.0</Energy>
+        <Energy Type1="12" Type2="36">6.0</Energy>
+        <Energy Type1="12" Type2="37">6.0</Energy>
+        <Energy Type1="12" Type2="38">6.0</Energy>
+        <Energy Type1="12" Type2="39">6.0</Energy>
+        <Energy Type1="12" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="13" Type2="13">6.0</Energy>
+        <Energy Type1="13" Type2="14">6.0</Energy>
+        <Energy Type1="13" Type2="15">6.0</Energy>
+        <Energy Type1="13" Type2="16">6.0</Energy>
+        <Energy Type1="13" Type2="17">6.0</Energy>
+        <Energy Type1="13" Type2="18">6.0</Energy>
+        <Energy Type1="13" Type2="19">6.0</Energy>
+        <Energy Type1="13" Type2="20">6.0</Energy>
+        <Energy Type1="13" Type2="21">6.0</Energy>
+        <Energy Type1="13" Type2="22">6.0</Energy>
+        <Energy Type1="13" Type2="23">6.0</Energy>
+        <Energy Type1="13" Type2="24">6.0</Energy>
+        <Energy Type1="13" Type2="25">6.0</Energy>
+        <Energy Type1="13" Type2="26">6.0</Energy>
+        <Energy Type1="13" Type2="27">6.0</Energy>
+        <Energy Type1="13" Type2="28">6.0</Energy>
+        <Energy Type1="13" Type2="29">6.0</Energy>
+        <Energy Type1="13" Type2="30">6.0</Energy>
+        <Energy Type1="13" Type2="31">6.0</Energy>
+        <Energy Type1="13" Type2="32">6.0</Energy>
+        <Energy Type1="13" Type2="33">6.0</Energy>
+        <Energy Type1="13" Type2="34">6.0</Energy>
+        <Energy Type1="13" Type2="35">6.0</Energy>
+        <Energy Type1="13" Type2="36">6.0</Energy>
+        <Energy Type1="13" Type2="37">6.0</Energy>
+        <Energy Type1="13" Type2="38">6.0</Energy>
+        <Energy Type1="13" Type2="39">6.0</Energy>
+        <Energy Type1="13" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="14" Type2="14">6.0</Energy>
+        <Energy Type1="14" Type2="15">6.0</Energy>
+        <Energy Type1="14" Type2="16">6.0</Energy>
+        <Energy Type1="14" Type2="17">6.0</Energy>
+        <Energy Type1="14" Type2="18">6.0</Energy>
+        <Energy Type1="14" Type2="19">6.0</Energy>
+        <Energy Type1="14" Type2="20">6.0</Energy>
+        <Energy Type1="14" Type2="21">6.0</Energy>
+        <Energy Type1="14" Type2="22">6.0</Energy>
+        <Energy Type1="14" Type2="23">6.0</Energy>
+        <Energy Type1="14" Type2="24">6.0</Energy>
+        <Energy Type1="14" Type2="25">6.0</Energy>
+        <Energy Type1="14" Type2="26">6.0</Energy>
+        <Energy Type1="14" Type2="27">6.0</Energy>
+        <Energy Type1="14" Type2="28">6.0</Energy>
+        <Energy Type1="14" Type2="29">6.0</Energy>
+        <Energy Type1="14" Type2="30">6.0</Energy>
+        <Energy Type1="14" Type2="31">6.0</Energy>
+        <Energy Type1="14" Type2="32">6.0</Energy>
+        <Energy Type1="14" Type2="33">6.0</Energy>
+        <Energy Type1="14" Type2="34">6.0</Energy>
+        <Energy Type1="14" Type2="35">6.0</Energy>
+        <Energy Type1="14" Type2="36">6.0</Energy>
+        <Energy Type1="14" Type2="37">6.0</Energy>
+        <Energy Type1="14" Type2="38">6.0</Energy>
+        <Energy Type1="14" Type2="39">6.0</Energy>
+        <Energy Type1="14" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="15" Type2="15">6.0</Energy>
+        <Energy Type1="15" Type2="16">6.0</Energy>
+        <Energy Type1="15" Type2="17">6.0</Energy>
+        <Energy Type1="15" Type2="18">6.0</Energy>
+        <Energy Type1="15" Type2="19">6.0</Energy>
+        <Energy Type1="15" Type2="20">6.0</Energy>
+        <Energy Type1="15" Type2="21">6.0</Energy>
+        <Energy Type1="15" Type2="22">6.0</Energy>
+        <Energy Type1="15" Type2="23">6.0</Energy>
+        <Energy Type1="15" Type2="24">6.0</Energy>
+        <Energy Type1="15" Type2="25">6.0</Energy>
+        <Energy Type1="15" Type2="26">6.0</Energy>
+        <Energy Type1="15" Type2="27">6.0</Energy>
+        <Energy Type1="15" Type2="28">6.0</Energy>
+        <Energy Type1="15" Type2="29">6.0</Energy>
+        <Energy Type1="15" Type2="30">6.0</Energy>
+        <Energy Type1="15" Type2="31">6.0</Energy>
+        <Energy Type1="15" Type2="32">6.0</Energy>
+        <Energy Type1="15" Type2="33">6.0</Energy>
+        <Energy Type1="15" Type2="34">6.0</Energy>
+        <Energy Type1="15" Type2="35">6.0</Energy>
+        <Energy Type1="15" Type2="36">6.0</Energy>
+        <Energy Type1="15" Type2="37">6.0</Energy>
+        <Energy Type1="15" Type2="38">6.0</Energy>
+        <Energy Type1="15" Type2="39">6.0</Energy>
+        <Energy Type1="15" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="16" Type2="16">6.0</Energy>
+        <Energy Type1="16" Type2="17">6.0</Energy>
+        <Energy Type1="16" Type2="18">6.0</Energy>
+        <Energy Type1="16" Type2="19">6.0</Energy>
+        <Energy Type1="16" Type2="20">6.0</Energy>
+        <Energy Type1="16" Type2="21">6.0</Energy>
+        <Energy Type1="16" Type2="22">6.0</Energy>
+        <Energy Type1="16" Type2="23">6.0</Energy>
+        <Energy Type1="16" Type2="24">6.0</Energy>
+        <Energy Type1="16" Type2="25">6.0</Energy>
+        <Energy Type1="16" Type2="26">6.0</Energy>
+        <Energy Type1="16" Type2="27">6.0</Energy>
+        <Energy Type1="16" Type2="28">6.0</Energy>
+        <Energy Type1="16" Type2="29">6.0</Energy>
+        <Energy Type1="16" Type2="30">6.0</Energy>
+        <Energy Type1="16" Type2="31">6.0</Energy>
+        <Energy Type1="16" Type2="32">6.0</Energy>
+        <Energy Type1="16" Type2="33">6.0</Energy>
+        <Energy Type1="16" Type2="34">6.0</Energy>
+        <Energy Type1="16" Type2="35">6.0</Energy>
+        <Energy Type1="16" Type2="36">6.0</Energy>
+        <Energy Type1="16" Type2="37">6.0</Energy>
+        <Energy Type1="16" Type2="38">6.0</Energy>
+        <Energy Type1="16" Type2="39">6.0</Energy>
+        <Energy Type1="16" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="17" Type2="17">6.0</Energy>
+        <Energy Type1="17" Type2="18">6.0</Energy>
+        <Energy Type1="17" Type2="19">6.0</Energy>
+        <Energy Type1="17" Type2="20">6.0</Energy>
+        <Energy Type1="17" Type2="21">6.0</Energy>
+        <Energy Type1="17" Type2="22">6.0</Energy>
+        <Energy Type1="17" Type2="23">6.0</Energy>
+        <Energy Type1="17" Type2="24">6.0</Energy>
+        <Energy Type1="17" Type2="25">6.0</Energy>
+        <Energy Type1="17" Type2="26">6.0</Energy>
+        <Energy Type1="17" Type2="27">6.0</Energy>
+        <Energy Type1="17" Type2="28">6.0</Energy>
+        <Energy Type1="17" Type2="29">6.0</Energy>
+        <Energy Type1="17" Type2="30">6.0</Energy>
+        <Energy Type1="17" Type2="31">6.0</Energy>
+        <Energy Type1="17" Type2="32">6.0</Energy>
+        <Energy Type1="17" Type2="33">6.0</Energy>
+        <Energy Type1="17" Type2="34">6.0</Energy>
+        <Energy Type1="17" Type2="35">6.0</Energy>
+        <Energy Type1="17" Type2="36">6.0</Energy>
+        <Energy Type1="17" Type2="37">6.0</Energy>
+        <Energy Type1="17" Type2="38">6.0</Energy>
+        <Energy Type1="17" Type2="39">6.0</Energy>
+        <Energy Type1="17" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="18" Type2="18">6.0</Energy>
+        <Energy Type1="18" Type2="19">6.0</Energy>
+        <Energy Type1="18" Type2="20">6.0</Energy>
+        <Energy Type1="18" Type2="21">6.0</Energy>
+        <Energy Type1="18" Type2="22">6.0</Energy>
+        <Energy Type1="18" Type2="23">6.0</Energy>
+        <Energy Type1="18" Type2="24">6.0</Energy>
+        <Energy Type1="18" Type2="25">6.0</Energy>
+        <Energy Type1="18" Type2="26">6.0</Energy>
+        <Energy Type1="18" Type2="27">6.0</Energy>
+        <Energy Type1="18" Type2="28">6.0</Energy>
+        <Energy Type1="18" Type2="29">6.0</Energy>
+        <Energy Type1="18" Type2="30">6.0</Energy>
+        <Energy Type1="18" Type2="31">6.0</Energy>
+        <Energy Type1="18" Type2="32">6.0</Energy>
+        <Energy Type1="18" Type2="33">6.0</Energy>
+        <Energy Type1="18" Type2="34">6.0</Energy>
+        <Energy Type1="18" Type2="35">6.0</Energy>
+        <Energy Type1="18" Type2="36">6.0</Energy>
+        <Energy Type1="18" Type2="37">6.0</Energy>
+        <Energy Type1="18" Type2="38">6.0</Energy>
+        <Energy Type1="18" Type2="39">6.0</Energy>
+        <Energy Type1="18" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="19" Type2="19">6.0</Energy>
+        <Energy Type1="19" Type2="20">6.0</Energy>
+        <Energy Type1="19" Type2="21">6.0</Energy>
+        <Energy Type1="19" Type2="22">6.0</Energy>
+        <Energy Type1="19" Type2="23">6.0</Energy>
+        <Energy Type1="19" Type2="24">6.0</Energy>
+        <Energy Type1="19" Type2="25">6.0</Energy>
+        <Energy Type1="19" Type2="26">6.0</Energy>
+        <Energy Type1="19" Type2="27">6.0</Energy>
+        <Energy Type1="19" Type2="28">6.0</Energy>
+        <Energy Type1="19" Type2="29">6.0</Energy>
+        <Energy Type1="19" Type2="30">6.0</Energy>
+        <Energy Type1="19" Type2="31">6.0</Energy>
+        <Energy Type1="19" Type2="32">6.0</Energy>
+        <Energy Type1="19" Type2="33">6.0</Energy>
+        <Energy Type1="19" Type2="34">6.0</Energy>
+        <Energy Type1="19" Type2="35">6.0</Energy>
+        <Energy Type1="19" Type2="36">6.0</Energy>
+        <Energy Type1="19" Type2="37">6.0</Energy>
+        <Energy Type1="19" Type2="38">6.0</Energy>
+        <Energy Type1="19" Type2="39">6.0</Energy>
+        <Energy Type1="19" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="20" Type2="20">6.0</Energy>
+        <Energy Type1="20" Type2="21">6.0</Energy>
+        <Energy Type1="20" Type2="22">6.0</Energy>
+        <Energy Type1="20" Type2="23">6.0</Energy>
+        <Energy Type1="20" Type2="24">6.0</Energy>
+        <Energy Type1="20" Type2="25">6.0</Energy>
+        <Energy Type1="20" Type2="26">6.0</Energy>
+        <Energy Type1="20" Type2="27">6.0</Energy>
+        <Energy Type1="20" Type2="28">6.0</Energy>
+        <Energy Type1="20" Type2="29">6.0</Energy>
+        <Energy Type1="20" Type2="30">6.0</Energy>
+        <Energy Type1="20" Type2="31">6.0</Energy>
+        <Energy Type1="20" Type2="32">6.0</Energy>
+        <Energy Type1="20" Type2="33">6.0</Energy>
+        <Energy Type1="20" Type2="34">6.0</Energy>
+        <Energy Type1="20" Type2="35">6.0</Energy>
+        <Energy Type1="20" Type2="36">6.0</Energy>
+        <Energy Type1="20" Type2="37">6.0</Energy>
+        <Energy Type1="20" Type2="38">6.0</Energy>
+        <Energy Type1="20" Type2="39">6.0</Energy>
+        <Energy Type1="20" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="21" Type2="21">6.0</Energy>
+        <Energy Type1="21" Type2="22">6.0</Energy>
+        <Energy Type1="21" Type2="23">6.0</Energy>
+        <Energy Type1="21" Type2="24">6.0</Energy>
+        <Energy Type1="21" Type2="25">6.0</Energy>
+        <Energy Type1="21" Type2="26">6.0</Energy>
+        <Energy Type1="21" Type2="27">6.0</Energy>
+        <Energy Type1="21" Type2="28">6.0</Energy>
+        <Energy Type1="21" Type2="29">6.0</Energy>
+        <Energy Type1="21" Type2="30">6.0</Energy>
+        <Energy Type1="21" Type2="31">6.0</Energy>
+        <Energy Type1="21" Type2="32">6.0</Energy>
+        <Energy Type1="21" Type2="33">6.0</Energy>
+        <Energy Type1="21" Type2="34">6.0</Energy>
+        <Energy Type1="21" Type2="35">6.0</Energy>
+        <Energy Type1="21" Type2="36">6.0</Energy>
+        <Energy Type1="21" Type2="37">6.0</Energy>
+        <Energy Type1="21" Type2="38">6.0</Energy>
+        <Energy Type1="21" Type2="39">6.0</Energy>
+        <Energy Type1="21" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="22" Type2="22">6.0</Energy>
+        <Energy Type1="22" Type2="23">6.0</Energy>
+        <Energy Type1="22" Type2="24">6.0</Energy>
+        <Energy Type1="22" Type2="25">6.0</Energy>
+        <Energy Type1="22" Type2="26">6.0</Energy>
+        <Energy Type1="22" Type2="27">6.0</Energy>
+        <Energy Type1="22" Type2="28">6.0</Energy>
+        <Energy Type1="22" Type2="29">6.0</Energy>
+        <Energy Type1="22" Type2="30">6.0</Energy>
+        <Energy Type1="22" Type2="31">6.0</Energy>
+        <Energy Type1="22" Type2="32">6.0</Energy>
+        <Energy Type1="22" Type2="33">6.0</Energy>
+        <Energy Type1="22" Type2="34">6.0</Energy>
+        <Energy Type1="22" Type2="35">6.0</Energy>
+        <Energy Type1="22" Type2="36">6.0</Energy>
+        <Energy Type1="22" Type2="37">6.0</Energy>
+        <Energy Type1="22" Type2="38">6.0</Energy>
+        <Energy Type1="22" Type2="39">6.0</Energy>
+        <Energy Type1="22" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="23" Type2="23">6.0</Energy>
+        <Energy Type1="23" Type2="24">6.0</Energy>
+        <Energy Type1="23" Type2="25">6.0</Energy>
+        <Energy Type1="23" Type2="26">6.0</Energy>
+        <Energy Type1="23" Type2="27">6.0</Energy>
+        <Energy Type1="23" Type2="28">6.0</Energy>
+        <Energy Type1="23" Type2="29">6.0</Energy>
+        <Energy Type1="23" Type2="30">6.0</Energy>
+        <Energy Type1="23" Type2="31">6.0</Energy>
+        <Energy Type1="23" Type2="32">6.0</Energy>
+        <Energy Type1="23" Type2="33">6.0</Energy>
+        <Energy Type1="23" Type2="34">6.0</Energy>
+        <Energy Type1="23" Type2="35">6.0</Energy>
+        <Energy Type1="23" Type2="36">6.0</Energy>
+        <Energy Type1="23" Type2="37">6.0</Energy>
+        <Energy Type1="23" Type2="38">6.0</Energy>
+        <Energy Type1="23" Type2="39">6.0</Energy>
+        <Energy Type1="23" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="24" Type2="24">6.0</Energy>
+        <Energy Type1="24" Type2="25">6.0</Energy>
+        <Energy Type1="24" Type2="26">6.0</Energy>
+        <Energy Type1="24" Type2="27">6.0</Energy>
+        <Energy Type1="24" Type2="28">6.0</Energy>
+        <Energy Type1="24" Type2="29">6.0</Energy>
+        <Energy Type1="24" Type2="30">6.0</Energy>
+        <Energy Type1="24" Type2="31">6.0</Energy>
+        <Energy Type1="24" Type2="32">6.0</Energy>
+        <Energy Type1="24" Type2="33">6.0</Energy>
+        <Energy Type1="24" Type2="34">6.0</Energy>
+        <Energy Type1="24" Type2="35">6.0</Energy>
+        <Energy Type1="24" Type2="36">6.0</Energy>
+        <Energy Type1="24" Type2="37">6.0</Energy>
+        <Energy Type1="24" Type2="38">6.0</Energy>
+        <Energy Type1="24" Type2="39">6.0</Energy>
+        <Energy Type1="24" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="25" Type2="25">6.0</Energy>
+        <Energy Type1="25" Type2="26">6.0</Energy>
+        <Energy Type1="25" Type2="27">6.0</Energy>
+        <Energy Type1="25" Type2="28">6.0</Energy>
+        <Energy Type1="25" Type2="29">6.0</Energy>
+        <Energy Type1="25" Type2="30">6.0</Energy>
+        <Energy Type1="25" Type2="31">6.0</Energy>
+        <Energy Type1="25" Type2="32">6.0</Energy>
+        <Energy Type1="25" Type2="33">6.0</Energy>
+        <Energy Type1="25" Type2="34">6.0</Energy>
+        <Energy Type1="25" Type2="35">6.0</Energy>
+        <Energy Type1="25" Type2="36">6.0</Energy>
+        <Energy Type1="25" Type2="37">6.0</Energy>
+        <Energy Type1="25" Type2="38">6.0</Energy>
+        <Energy Type1="25" Type2="39">6.0</Energy>
+        <Energy Type1="25" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="26" Type2="26">6.0</Energy>
+        <Energy Type1="26" Type2="27">6.0</Energy>
+        <Energy Type1="26" Type2="28">6.0</Energy>
+        <Energy Type1="26" Type2="29">6.0</Energy>
+        <Energy Type1="26" Type2="30">6.0</Energy>
+        <Energy Type1="26" Type2="31">6.0</Energy>
+        <Energy Type1="26" Type2="32">6.0</Energy>
+        <Energy Type1="26" Type2="33">6.0</Energy>
+        <Energy Type1="26" Type2="34">6.0</Energy>
+        <Energy Type1="26" Type2="35">6.0</Energy>
+        <Energy Type1="26" Type2="36">6.0</Energy>
+        <Energy Type1="26" Type2="37">6.0</Energy>
+        <Energy Type1="26" Type2="38">6.0</Energy>
+        <Energy Type1="26" Type2="39">6.0</Energy>
+        <Energy Type1="26" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="27" Type2="27">6.0</Energy>
+        <Energy Type1="27" Type2="28">6.0</Energy>
+        <Energy Type1="27" Type2="29">6.0</Energy>
+        <Energy Type1="27" Type2="30">6.0</Energy>
+        <Energy Type1="27" Type2="31">6.0</Energy>
+        <Energy Type1="27" Type2="32">6.0</Energy>
+        <Energy Type1="27" Type2="33">6.0</Energy>
+        <Energy Type1="27" Type2="34">6.0</Energy>
+        <Energy Type1="27" Type2="35">6.0</Energy>
+        <Energy Type1="27" Type2="36">6.0</Energy>
+        <Energy Type1="27" Type2="37">6.0</Energy>
+        <Energy Type1="27" Type2="38">6.0</Energy>
+        <Energy Type1="27" Type2="39">6.0</Energy>
+        <Energy Type1="27" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="28" Type2="28">6.0</Energy>
+        <Energy Type1="28" Type2="29">6.0</Energy>
+        <Energy Type1="28" Type2="30">6.0</Energy>
+        <Energy Type1="28" Type2="31">6.0</Energy>
+        <Energy Type1="28" Type2="32">6.0</Energy>
+        <Energy Type1="28" Type2="33">6.0</Energy>
+        <Energy Type1="28" Type2="34">6.0</Energy>
+        <Energy Type1="28" Type2="35">6.0</Energy>
+        <Energy Type1="28" Type2="36">6.0</Energy>
+        <Energy Type1="28" Type2="37">6.0</Energy>
+        <Energy Type1="28" Type2="38">6.0</Energy>
+        <Energy Type1="28" Type2="39">6.0</Energy>
+        <Energy Type1="28" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="29" Type2="29">6.0</Energy>
+        <Energy Type1="29" Type2="30">6.0</Energy>
+        <Energy Type1="29" Type2="31">6.0</Energy>
+        <Energy Type1="29" Type2="32">6.0</Energy>
+        <Energy Type1="29" Type2="33">6.0</Energy>
+        <Energy Type1="29" Type2="34">6.0</Energy>
+        <Energy Type1="29" Type2="35">6.0</Energy>
+        <Energy Type1="29" Type2="36">6.0</Energy>
+        <Energy Type1="29" Type2="37">6.0</Energy>
+        <Energy Type1="29" Type2="38">6.0</Energy>
+        <Energy Type1="29" Type2="39">6.0</Energy>
+        <Energy Type1="29" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="30" Type2="30">6.0</Energy>
+        <Energy Type1="30" Type2="31">6.0</Energy>
+        <Energy Type1="30" Type2="32">6.0</Energy>
+        <Energy Type1="30" Type2="33">6.0</Energy>
+        <Energy Type1="30" Type2="34">6.0</Energy>
+        <Energy Type1="30" Type2="35">6.0</Energy>
+        <Energy Type1="30" Type2="36">6.0</Energy>
+        <Energy Type1="30" Type2="37">6.0</Energy>
+        <Energy Type1="30" Type2="38">6.0</Energy>
+        <Energy Type1="30" Type2="39">6.0</Energy>
+        <Energy Type1="30" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="31" Type2="31">6.0</Energy>
+        <Energy Type1="31" Type2="32">6.0</Energy>
+        <Energy Type1="31" Type2="33">6.0</Energy>
+        <Energy Type1="31" Type2="34">6.0</Energy>
+        <Energy Type1="31" Type2="35">6.0</Energy>
+        <Energy Type1="31" Type2="36">6.0</Energy>
+        <Energy Type1="31" Type2="37">6.0</Energy>
+        <Energy Type1="31" Type2="38">6.0</Energy>
+        <Energy Type1="31" Type2="39">6.0</Energy>
+        <Energy Type1="31" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="32" Type2="32">6.0</Energy>
+        <Energy Type1="32" Type2="33">6.0</Energy>
+        <Energy Type1="32" Type2="34">6.0</Energy>
+        <Energy Type1="32" Type2="35">6.0</Energy>
+        <Energy Type1="32" Type2="36">6.0</Energy>
+        <Energy Type1="32" Type2="37">6.0</Energy>
+        <Energy Type1="32" Type2="38">6.0</Energy>
+        <Energy Type1="32" Type2="39">6.0</Energy>
+        <Energy Type1="32" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="33" Type2="33">6.0</Energy>
+        <Energy Type1="33" Type2="34">6.0</Energy>
+        <Energy Type1="33" Type2="35">6.0</Energy>
+        <Energy Type1="33" Type2="36">6.0</Energy>
+        <Energy Type1="33" Type2="37">6.0</Energy>
+        <Energy Type1="33" Type2="38">6.0</Energy>
+        <Energy Type1="33" Type2="39">6.0</Energy>
+        <Energy Type1="33" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="34" Type2="34">6.0</Energy>
+        <Energy Type1="34" Type2="35">6.0</Energy>
+        <Energy Type1="34" Type2="36">6.0</Energy>
+        <Energy Type1="34" Type2="37">6.0</Energy>
+        <Energy Type1="34" Type2="38">6.0</Energy>
+        <Energy Type1="34" Type2="39">6.0</Energy>
+        <Energy Type1="34" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="35" Type2="35">6.0</Energy>
+        <Energy Type1="35" Type2="36">6.0</Energy>
+        <Energy Type1="35" Type2="37">6.0</Energy>
+        <Energy Type1="35" Type2="38">6.0</Energy>
+        <Energy Type1="35" Type2="39">6.0</Energy>
+        <Energy Type1="35" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="36" Type2="36">6.0</Energy>
+        <Energy Type1="36" Type2="37">6.0</Energy>
+        <Energy Type1="36" Type2="38">6.0</Energy>
+        <Energy Type1="36" Type2="39">6.0</Energy>
+        <Energy Type1="36" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="37" Type2="37">6.0</Energy>
+        <Energy Type1="37" Type2="38">6.0</Energy>
+        <Energy Type1="37" Type2="39">6.0</Energy>
+        <Energy Type1="37" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="38" Type2="38">6.0</Energy>
+        <Energy Type1="38" Type2="39">6.0</Energy>
+        <Energy Type1="38" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="39" Type2="39">6.0</Energy>
+        <Energy Type1="39" Type2="40">6.0</Energy>
+ 
+        <Energy Type1="40" Type2="40">6.0</Energy>
+
+	  <NeighborOrder>1</NeighborOrder>
+   </Plugin>
+   
+   	
+</CompuCell3D>

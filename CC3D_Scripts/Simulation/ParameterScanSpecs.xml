@@ -1,0 +1,8 @@
+<ParameterScan version="3.7.0">
+   <OutputDirectory>test</OutputDirectory>
+   <ParameterList Resource="Simulation/HST_Steppables.py">
+      <Parameter CurrentIteration="0" Name="folder_name_modifier" Type="PYTHON_GLOBAL" ValueType="int">
+         <Values>0</Values>
+      </Parameter>
+   </ParameterList>
+</ParameterScan>
